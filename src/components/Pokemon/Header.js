@@ -36,13 +36,12 @@ export const styles = StyleSheet.create({
     },
     content: {
         marginHorizontal: 20,
-        marginTop: 30,
+        marginTop: 80,
     },
     header: {
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        paddingTop: 40,
     },
     titleName: {
         fontSize: 40,
