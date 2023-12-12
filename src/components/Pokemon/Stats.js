@@ -6,7 +6,7 @@ export default function Stats(props) {
     const {stats} = props;
     const barStyles = (num) => {
         return {
-            backgroundColor: num > 50 ? '#68a0cf' : '#ff6f69',
+            backgroundColor: num > 60 ? '#68a0cf' : num > 30 ? '#f3d34a' : '#f1974a',
             width: `${num}%`,
         }
     }
