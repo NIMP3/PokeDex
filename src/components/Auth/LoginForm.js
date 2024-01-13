@@ -14,6 +14,7 @@ export default function LoginForm() {
     validationSchema: Yup.object(validationSchema()),
     validateOnChange: false,
     onSubmit: (values) => {
+      setError('')
       const { username, password } = values
       if (user.username === username && user.password === password) {
         login(userDetails)
@@ -35,6 +36,7 @@ export default function LoginForm() {
           value={formik.values.username}
           onChangeText={(text) => formik.setFieldValue('username', text)}
         />
+        <Text style={styles.error}>{formik.errors.username}</Text>
 
         <TextInput 
           placeholder='Contraseña' 
@@ -44,13 +46,12 @@ export default function LoginForm() {
           value={formik.values.password}
           onChangeText={(text) => formik.setFieldValue('password', text)}  
         />
+        <Text style={styles.error}>{formik.errors.password}</Text>
         
         <View style={styles.btnForm}>
           <Button title='Entrar' onPress={formik.handleSubmit}/>
         </View>
 
-        <Text style={styles.error}>{formik.errors.username}</Text>
-        <Text style={styles.error}>{formik.errors.password}</Text>
         <Text style={styles.error}>{error}</Text>
     </View>
   )
@@ -87,11 +88,11 @@ const styles = StyleSheet.create({
         padding: 10,
     },
     error: {
-        textAlign: 'center',
         color: '#f00',
         fontWeight: 'bold',
-        fontSize: 15,
+        fontSize: 12,
         marginTop: 20,
+        marginLeft: 20
     },
     btnForm: {
         marginLeft: 20,
