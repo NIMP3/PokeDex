@@ -18,7 +18,7 @@ export default function Pokemon(props) {
       headerRight: () => auth &&  <Favorite id={pokemon?.id} />, 
       headerLeft: () => (<Icon name="arrow-left" color="#fff" size={20} style={{ marginLeft: 20}} onPress={() => navigation.goBack()} />),
     });
-  }, [navigation, params, pokemon]);
+  }, [navigation, params, pokemon, auth]);
 
   useEffect(() => {
     (async () => {
